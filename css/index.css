@@ -1,0 +1,18 @@
+body{
+	background-color: #3270A6;
+
+}
+div{
+	height:100vh;
+	background-color: rgba(255,255,255,0.2);
+}
+
+#canvasdiv{
+	background-color: #F2C12E;
+}
+#canvas1div{
+	background-color: #F2CD88;
+}
+#canvas2div{
+	background-color: #F2A057;
+}
