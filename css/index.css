@@ -3,16 +3,32 @@ body{
 
 }
 div{
-	height:100vh;
-	background-color: rgba(255,255,255,0.2);
+	height:90vh;
 }
 
 #canvasdiv{
 	background-color: #F2C12E;
+	margin: 25px 25px 25px 25px;
+	border-radius: 5vh;
+}
+#candes{
+	display: inline;
 }
 #canvas1div{
 	background-color: #F2CD88;
+	margin: 25px 25px 25px 25px;
+	border-radius: 5vh;
+
+}
+#candes1{
+	display: inline;
 }
 #canvas2div{
 	background-color: #F2A057;
+	margin: 25px 25px 25px 25px;
+	border-radius: 5vh;
+
+}
+#candes2{
+	display: inline;
 }

@@ -1,6 +1,8 @@
 const canvas = document.getElementById('canvas');
-canvas.width=  Math.floor(window.innerWidth)*0.9;
-canvas.height=  Math.floor(window.innerHeight)*0.8;
+const canvasdiv = document.getElementById('canvasdiv');
+canvas.width=  Math.floor(canvasdiv.clientWidth)*0.8;
+canvas.height=  Math.floor(canvasdiv.clientHeight)*0.8;
+
 const ctx = canvas.getContext('2d');
 
 var mouse={
@@ -11,15 +13,23 @@ var mouse={
 
 window.addEventListener('mousemove',
 	function(event){
-		mouse.x=event.x;
-		mouse.y=event.y;
+		let rect = canvas.getBoundingClientRect(); 
+		mouse.x = event.x - rect.left; 
+		mouse.y = event.y - rect.top; 
+});
+
+var onit;
+$('#canvas').hover(function(){
+	onit=1;
+	},function(){
+		onit=2;
 });
 
 
 window.addEventListener('resize',
 	function(event){
-		canvas.width=  Math.floor(window.innerWidth);
-		canvas.height=  Math.floor(window.innerHeight);
+		canvas.width=  Math.floor(canvasdiv.clientWidth)*0.8;
+		canvas.height=  Math.floor(canvasdiv.clientHeight)*0.8;
 		init();
 });
 
@@ -52,7 +62,7 @@ function Circle(x,y,dx,dy,radius){
 		this.y+=this.dy;
 
 		//Interactivity
-		if(mouse.x-this.x<50 && mouse.x-this.x>-50 && mouse.y-this.y<50 && mouse.y-this.y>-50){
+		if(mouse.x-this.x<50 && mouse.x-this.x>-50 && mouse.y-this.y<50 && mouse.y-this.y>-50 && onit==1 ){
 			if(this.radius<maxRadius)
 				this.radius+=1;
 		}else if(this.radius>this.minRadius){
