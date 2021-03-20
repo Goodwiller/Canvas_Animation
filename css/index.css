@@ -1,33 +1,82 @@
+*{
+	margin:0px;
+	padding:0px;
+}
 body{
 	background-color: #3270A6;
+	overflow:hidden;
+
 
 }
-div{
-	height:90vh;
+
+#navbar{
+	position:fixed;
+	display:inline-block;
+	height: 10vh;
+	z-index: 2;
+	background-color: rgba(255,255,255,0);
+	margin-top: 40vh;
+}
+
+.link{
+	height:5vh;
+	background-color: black;
+	margin-left: 25vh;
+
+}
+
+.nav{
+	display: flex;
+	background-color: white;
+	height: 5vw;
+	align-items: center;
+  	justify-content: flex-end;
+	margin-bottom: .5vw;
+    border-bottom: 1px solid black;
+
+}
+#logo{
+	height: 4vw;
+	margin-left: 2vw;
+	margin-right: auto;
+	cursor: pointer;
+}
+
+.links{
+	margin-right:6vw;
+	font-size: 1.5vw;
+	cursor: pointer;
+	transition: all 0.3 ease 0s;
+}
+.links:hover{
+	color: #0088a9;
+}
+
+#intro{
+	height: 90vh;
 }
 
 #canvasdiv{
 	background-color: #F2C12E;
-	margin: 25px 25px 25px 25px;
+	/* margin: 25px 25px 25px 25px; */
 	border-radius: 5vh;
+	height:100vh;
 }
 #candes{
 	display: inline;
 }
 #canvas1div{
 	background-color: #F2CD88;
-	margin: 25px 25px 25px 25px;
 	border-radius: 5vh;
-
+	height:100vh;
 }
 #candes1{
 	display: inline;
 }
 #canvas2div{
 	background-color: #F2A057;
-	margin: 25px 25px 25px 25px;
 	border-radius: 5vh;
-
+	height:100vh;
 }
 #candes2{
 	display: inline;

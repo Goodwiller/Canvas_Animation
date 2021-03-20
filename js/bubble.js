@@ -1,7 +1,7 @@
 const canvas = document.getElementById('canvas');
 const canvasdiv = document.getElementById('canvasdiv');
-canvas.width=  Math.floor(canvasdiv.clientWidth)*0.8;
-canvas.height=  Math.floor(canvasdiv.clientHeight)*0.8;
+canvas.width=  Math.floor(canvasdiv.clientWidth);
+canvas.height=  Math.floor(canvasdiv.clientHeight);
 
 const ctx = canvas.getContext('2d');
 
@@ -18,12 +18,7 @@ window.addEventListener('mousemove',
 		mouse.y = event.y - rect.top; 
 });
 
-var onit;
-$('#canvas').hover(function(){
-	onit=1;
-	},function(){
-		onit=2;
-});
+
 
 
 window.addEventListener('resize',
@@ -62,7 +57,7 @@ function Circle(x,y,dx,dy,radius){
 		this.y+=this.dy;
 
 		//Interactivity
-		if(mouse.x-this.x<50 && mouse.x-this.x>-50 && mouse.y-this.y<50 && mouse.y-this.y>-50 && onit==1 ){
+		if(mouse.x-this.x<50 && mouse.x-this.x>-50 && mouse.y-this.y<50 && mouse.y-this.y>-50  ){
 			if(this.radius<maxRadius)
 				this.radius+=1;
 		}else if(this.radius>this.minRadius){
@@ -76,7 +71,7 @@ var circleArray=[];
 
 function init(){
 	circleArray=[];
-	for (let i=0; i<800; i++) {
+	for (let i=0; i<500; i++) {
 		var radius = Math.random()*0+1;
 		var x=Math.random()*(canvas.width-radius*2)+radius;
 		var y=Math.random()*(canvas.height-radius*2)+radius;
